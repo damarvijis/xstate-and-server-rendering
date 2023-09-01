@@ -17,7 +17,6 @@ type RouteQuery = {
 
 export const getStaticPaths: GetStaticPaths<RouteQuery> = async () => {
   try {
-    // const paths = Array.from(Array(100)).map((_, idx) => ({ params: { id: `${idx + 1}` } }))
     const responseProduct: ProductListResponseType = await ListProduct({ limit: 1000, skip: 0, search: "" }).then(res => res.json())
     const paths = responseProduct.products.map((product) => ({ params: { id: `${product.id}` } }));
     return {

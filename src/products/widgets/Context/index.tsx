@@ -10,7 +10,6 @@ export const ProductContext = createContext<AppContextType>({
 
 export const useProductContext = () => useContext(ProductContext)
 
-// export const ProductProvider = (props: AppProviderPropsType) => { // bikin domain baru kalo mau rapih
 export const AppProvider = (props: AppProviderPropsType) => {
   const [favIds, setFavIds] = useState<number[]>([])
   const [isDark, setIsDark] = useState<boolean>(false)
